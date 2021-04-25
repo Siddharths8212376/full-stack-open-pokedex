@@ -12,14 +12,12 @@ jest.mock('axios')
 const previous = {
   url: 'https://pokeapi.co/api/v2/pokemon/132/',
   name: 'ditto',
-  id: 132,
-  href: 'pokemon/ditto'
+  id: 132
 }
 const next = {
   url: 'https://pokeapi.co/api/v2/pokemon/134/',
   name: 'vaporeon',
-  id: 134,
-  href: 'pokemon/vaporeon'
+  id: 134
 }
 
 const pokemonList = {
@@ -121,7 +119,7 @@ describe('<PokemonPage />', () => {
     })
 
     expect(screen.getByText('Previous')).toHaveAttribute('href', '/pokemon/ditto')
-    expect(screen.getByText('Next')).toHaveAttribute('href', '/pokemon/vaporeon')
+    expect(screen.getByText('Next')).toHaveAttribute('href', '/pokemon/ditto')
   })
 
   it('should not render previous and next urls if none exist', async () => {
